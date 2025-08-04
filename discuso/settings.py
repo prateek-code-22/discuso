@@ -88,13 +88,23 @@ WSGI_APPLICATION = 'discuso.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# Use environment variable for database URL if available (for Vercel)
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR,'db.sqlite3')),
+if DATABASE_URL:
+    # For production with external database
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
     }
-}
+else:
+    # For local development with SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': str(os.path.join(BASE_DIR,'db.sqlite3')),
+        }
+    }
 
 
 # Password validation
