@@ -21,5 +21,6 @@ urlpatterns = [
     path('topics/',views.topicsPage,name="topics"),
     path('activity/',views.activityPage,name="activity"),
     path('test-static/',views.test_static,name="test-static"),
+    path('static-files/<path:file_path>/', views.serve_static_file, name="serve_static_file"),
 
 ]

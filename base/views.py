@@ -218,3 +218,34 @@ def test_static(request):
         return HttpResponse(content, content_type='image/svg+xml')
     else:
         return HttpResponse(f"Static file not found at: {static_file_path}", status=404)
+
+def serve_static_file(request, file_path):
+    """Serve static files directly from Django"""
+    from django.http import HttpResponse, Http404
+    from django.conf import settings
+    import os
+    import mimetypes
+
+    # Security: prevent directory traversal
+    if '..' in file_path or file_path.startswith('/'):
+        raise Http404("File not found")
+    
+    # Construct full path
+    full_path = os.path.join(settings.STATIC_ROOT, file_path)
+    
+    # Check if file exists and is within static directory
+    if not os.path.exists(full_path) or not os.path.isfile(full_path):
+        raise Http404("File not found")
+    
+    # Determine content type
+    content_type, _ = mimetypes.guess_type(full_path)
+    if content_type is None:
+        content_type = 'application/octet-stream'
+    
+    # Read and serve file
+    try:
+        with open(full_path, 'rb') as f:
+            content = f.read()
+        return HttpResponse(content, content_type=content_type)
+    except Exception as e:
+        raise Http404(f"Error reading file: {str(e)}")
