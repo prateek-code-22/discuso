@@ -154,7 +154,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Add whitenoise for static files in production
 if not DEBUG:
     MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+  
 
 
 # Default primary key field type
