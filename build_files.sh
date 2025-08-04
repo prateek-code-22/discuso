@@ -7,5 +7,7 @@ pip install -r requirements.txt
 # Run migrations
 python manage.py migrate
 
-# For Vercel, we don't need collectstatic since we're serving from static directory directly
-# python manage.py collectstatic --noinput 
+# Collect static files for production
+python manage.py collectstatic --noinput
+
+echo "Static files collected in /staticfiles directory" 
