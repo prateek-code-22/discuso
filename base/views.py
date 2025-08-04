@@ -202,3 +202,19 @@ def topicsPage(request):
 def activityPage(request):
     room_messages = Message.objects.all()
     return render(request,'base/activity.html',{'room_messages': room_messages})
+
+def test_static(request):
+    """Test view to check if static files are working"""
+    from django.http import HttpResponse
+    from django.conf import settings
+    import os
+    
+    # Try to read a static file
+    static_file_path = os.path.join(settings.STATIC_ROOT, 'images', 'assets', 'logo.svg')
+    
+    if os.path.exists(static_file_path):
+        with open(static_file_path, 'r') as f:
+            content = f.read()
+        return HttpResponse(content, content_type='image/svg+xml')
+    else:
+        return HttpResponse(f"Static file not found at: {static_file_path}", status=404)
