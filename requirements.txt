@@ -12,3 +12,6 @@ whitenoise==6.2.0
 
 python-decouple==3.8
 Pillow==9.2.0
+
+# Vercel specific
+psycopg2-binary==2.9.5

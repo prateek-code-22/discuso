@@ -1,13 +1,22 @@
 {
     "builds": [
-    {
-    "src": "discuso/wsgi.py",
-    "use": "@vercel/python"
-    }],
+        {
+            "src": "discuso/wsgi.py",
+            "use": "@vercel/python"
+        }
+    ],
     "routes": [
-    {
-    "src": "/(.*)",
-    "dest": "discuso/wsgi.py"
-    }
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/media/(.*)",
+            "dest": "/media/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "discuso/wsgi.py"
+        }
     ]
 }
