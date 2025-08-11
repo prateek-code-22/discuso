@@ -1,0 +1,9 @@
+.git
+.gitignore
+*.pyc
+__pycache__
+.env
+.venv
+db.sqlite3
+media/*
+!media/.gitkeep
