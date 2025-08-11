@@ -2,27 +2,62 @@
 
 Discuso is a dynamic discussion platform built with Django that enables users to create, join, and participate in topic-based discussion rooms. The platform features real-time messaging, user authentication, and a clean, responsive interface.
 
-## Screenshots
+## User Interface
 
-### Update Profile Page
-![Update Profile](assets/update_profile.png)
-*Customize your profile with avatar, name, email, and bio*
-
-### Home Page
+### 1. Home Page
 ![Home Page](assets/home_page.png)
-*Browse topics, see recent activities, and join discussions*
 
-### Room List Page
-![Room List](assets/room_list.png)
-*View all discussion rooms with their hosts and topics*
+**Key Features:**
+- Browse trending topics on the left sidebar
+- View recent activities and discussions
+- Quick access to all discussion rooms
+- Real-time updates of recent activities
+- Topic-wise filtering of discussions
+- Dark mode UI for better readability
 
-### Chat Room Page
+### 2. Discussion Room
 ![Chat Room](assets/chat_room.png)
-*Participate in real-time discussions with other users*
 
-### Create Room Page
+**Key Features:**
+- Real-time messaging interface
+- Participant list on the right sidebar
+- Message history with timestamps
+- User avatars and names displayed
+- Clean and intuitive chat layout
+- Easy message input system
+
+### 3. Profile Management
+![Update Profile](assets/update_profile.png)
+
+**Key Features:**
+- Customizable user avatar upload
+- Edit personal information
+- Update username and email
+- Add personal bio
+- Modern form interface
+- Input validation and error handling
+
+### 4. Create Discussion Room
 ![Create Room](assets/create_room.png)
-*Create new discussion rooms with topics and descriptions*
+
+**Key Features:**
+- Simple room creation interface
+- Topic selection/creation
+- Room description editor
+- Privacy settings options
+- Clean and minimalist design
+- Quick setup process
+
+### 5. Room Browse Interface
+![Room List](assets/room_list.png)
+
+**Key Features:**
+- List of all available rooms
+- Topic categorization
+- Host information display
+- Recent activity indicators
+- Easy room navigation
+- Join/Leave room options
 
 ## Features
 
