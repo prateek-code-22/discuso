@@ -1,14 +1,15 @@
 #!/bin/bash
 # Build script for Vercel deployment
 
-# Install dependencies
+echo "Installing dependencies..."
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 
-# Run migrations
-python manage.py migrate
-
-# Collect static files for production
+echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
 python manage.py collectstatic --noinput
 
-echo "Static files collected in /staticfiles directory" 
+# Create a success marker
+touch /tmp/build-success
+
+echo "Build completed successfully"
