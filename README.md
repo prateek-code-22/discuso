@@ -7,57 +7,17 @@ Discuso is a dynamic discussion platform built with Django that enables users to
 ### 1. Home Page
 ![Home Page](assets/Homepage.png)
 
-**Key Features:**
-- Browse trending topics on the left sidebar
-- View recent activities and discussions
-- Quick access to all discussion rooms
-- Real-time updates of recent activities
-- Topic-wise filtering of discussions
-- Dark mode UI for better readability
-
 ### 2. Discussion Room
 ![Chat Room](assets/discussionpage.png)
 
-**Key Features:**
-- Real-time messaging interface
-- Participant list on the right sidebar
-- Message history with timestamps
-- User avatars and names displayed
-- Clean and intuitive chat layout
-- Easy message input system
-
-### 3. Profile Management
+### 3. Profile
 ![Update Profile](assets/profile.png)
-
-**Key Features:**
-- Customizable user avatar upload
-- Edit personal information
-- Update username and email
-- Add personal bio
-- Modern form interface
-- Input validation and error handling
 
 ### 4. Create Discussion Room
 ![Create Room](assets/create_room.png)
 
-**Key Features:**
-- Simple room creation interface
-- Topic selection/creation
-- Room description editor
-- Privacy settings options
-- Clean and minimalist design
-- Quick setup process
-
-### 5. Room Browse Interface
-![Room List](assets/room_Homepagelist.png)
-
-**Key Features:**
-- List of all available rooms
-- Topic categorization
-- Host information display
-- Recent activity indicators
-- Easy room navigation
-- Join/Leave room options
+### 5. Update Profile 
+![Room List](assets/update_profile.png)
 
 ## Features
 
@@ -150,4 +110,5 @@ Discuso is a dynamic discussion platform built with Django that enables users to
 3. Join rooms and participate in discussions
 4. Create topics and organize rooms
 5. Customize your profile with avatar and bio
+
 
