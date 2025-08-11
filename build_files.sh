@@ -8,6 +8,7 @@ pip install -r requirements.txt
 python manage.py migrate
 
 # Collect static files for production
+python manage.py collectstatic --noinput --clear
 python manage.py collectstatic --noinput
 
 echo "Static files collected in /staticfiles directory" 

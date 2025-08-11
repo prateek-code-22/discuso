@@ -14,10 +14,14 @@ import django
 django.setup()
 
 from django.core.wsgi import get_wsgi_application
-from django.contrib.staticfiles.handlers import StaticFilesHandler
+from django.conf import settings
 
 # Get the WSGI application
-application = get_wsgi_application()
+if settings.DEBUG:
+    from django.contrib.staticfiles.handlers import StaticFilesHandler
+    application = StaticFilesHandler(get_wsgi_application())
+else:
+    application = get_wsgi_application()
 
 # Wrap with StaticFilesHandler for development
 if os.environ.get('VERCEL_ENV') != 'production':
