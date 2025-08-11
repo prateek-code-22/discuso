@@ -1,15 +1,16 @@
-# Django and Core Dependencies
-Django==4.1
-djangorestframework==3.14.0
-django-cors-headers==3.13.0
+# Core dependencies with compatible versions
+Django>=4.1,<4.2
+djangorestframework>=3.14.0
+django-cors-headers>=3.13.0
 
 # Database
-psycopg2-binary==2.9.9
-dj-database-url==1.0.0
+psycopg2-binary>=2.9.9
+dj-database-url>=1.0.0
 
 # Deployment
-gunicorn==20.1.0
-whitenoise==6.2.0
+gunicorn>=20.1.0
+whitenoise>=6.2.0
 
-python-decouple==3.8
-Pillow==10.2.0
+# Utils
+python-decouple>=3.8
+Pillow>=10.0.0  # Using newer version for Python 3.12 compatibility

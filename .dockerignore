@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+.venv
+*.pyc
+__pycache__
+.DS_Store
+*.sqlite3
+media/*
+!media/.gitkeep
+staticfiles/*
+!staticfiles/.gitkeep
+*.log
