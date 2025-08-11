@@ -2,6 +2,28 @@
 
 Discuso is a dynamic discussion platform built with Django that enables users to create, join, and participate in topic-based discussion rooms. The platform features real-time messaging, user authentication, and a clean, responsive interface.
 
+## Screenshots
+
+### Update Profile Page
+![Update Profile](assets/update_profile.png)
+*Customize your profile with avatar, name, email, and bio*
+
+### Home Page
+![Home Page](assets/home_page.png)
+*Browse topics, see recent activities, and join discussions*
+
+### Room List Page
+![Room List](assets/room_list.png)
+*View all discussion rooms with their hosts and topics*
+
+### Chat Room Page
+![Chat Room](assets/chat_room.png)
+*Participate in real-time discussions with other users*
+
+### Create Room Page
+![Create Room](assets/create_room.png)
+*Create new discussion rooms with topics and descriptions*
+
 ## Features
 
 - 🔐 Email-based user authentication
@@ -85,21 +107,6 @@ Discuso is a dynamic discussion platform built with Django that enables users to
 9. **Access the application**
    - Open your browser and navigate to `http://127.0.0.1:8000`
    - Admin interface is available at `http://127.0.0.1:8000/admin`
-
-## Project Structure
-
-```
-discuso/
-├── api/                 # API endpoints
-├── base/               # Main application
-│   ├── migrations/     # Database migrations
-│   ├── templates/      # HTML templates
-│   ├── models.py       # Database models
-│   └── views.py        # View logic
-├── static/             # Static files
-├── media/              # User uploaded files
-└── discuso/            # Project settings
-```
 
 ## Usage
 

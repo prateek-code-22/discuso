@@ -1,7 +1,5 @@
 /config.json
 db.sqlite3
 __pycache__
-
-# Vercel
-.vercel
 staticfiles/
+!assets/*.png
