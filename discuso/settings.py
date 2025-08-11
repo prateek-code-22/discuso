@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'discuso.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # Database configuration
-if os.environ.get('VERCEL_ENV') == 'production':
+if os.environ.get('RAILWAY_ENVIRONMENT'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
