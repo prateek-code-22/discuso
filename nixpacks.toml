@@ -1,20 +1,25 @@
 [phases.setup]
-aptPkgs = [
-    "python3-dev",
-    "build-essential",
-    "zlib1g-dev",
-    "libjpeg-dev",
-    "libpng-dev",
-    "libtiff-dev",
+nixPkgs = [
+    "python312",
+    "gcc",
+    "zlib",
+    "libjpeg",
+    "libpng",
+    "libtiff",
     "pkg-config"
+]
+
+[phases.install]
+cmds = [
+    "python -m pip install --upgrade pip",
+    "pip install wheel setuptools"
 ]
 
 [phases.build]
 cmds = [
-    "python -m venv --copies /opt/venv",
-    ". /opt/venv/bin/activate",
-    "pip install -r requirements.txt"
+    "pip install --no-cache-dir -r requirements.txt",
+    "python manage.py collectstatic --noinput"
 ]
 
 [start]
-cmd = "gunicorn discuso.wsgi:application --log-file -"
+cmd = "gunicorn discuso.wsgi:application --bind 0.0.0.0:$PORT"
