@@ -89,21 +89,23 @@ WSGI_APPLICATION = 'discuso.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# Use environment variable for database URL if available (for Vercel)
-DATABASE_URL = os.environ.get('DATABASE_URL')
-
-if DATABASE_URL:
-    # For production with external database
-    import dj_database_url
+# Database configuration
+if os.environ.get('VERCEL_ENV') == 'production':
     DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL)
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('PGDATABASE'),
+            'USER': os.environ.get('PGUSER'),
+            'PASSWORD': os.environ.get('PGPASSWORD'),
+            'HOST': os.environ.get('PGHOST'),
+            'PORT': os.environ.get('PGPORT', '5432'),
+        }
     }
 else:
-    # For local development with SQLite
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': str(os.path.join(BASE_DIR,'db.sqlite3')),
+            'NAME': str(os.path.join(BASE_DIR, 'db.sqlite3')),
         }
     }
 

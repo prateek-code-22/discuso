@@ -17,15 +17,8 @@ from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 
 # Get the WSGI application
-if settings.DEBUG:
-    from django.contrib.staticfiles.handlers import StaticFilesHandler
-    application = StaticFilesHandler(get_wsgi_application())
-else:
-    application = get_wsgi_application()
-
-# Wrap with StaticFilesHandler for development
-if os.environ.get('VERCEL_ENV') != 'production':
-    application = StaticFilesHandler(application)
+application = get_wsgi_application()
 
 # Export for Vercel
+app = application
 app = application 

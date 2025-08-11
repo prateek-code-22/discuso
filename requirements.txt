@@ -4,6 +4,7 @@ djangorestframework==3.14.0
 django-cors-headers==3.13.0
 
 # Database
+psycopg2-binary==2.9.9
 dj-database-url==1.0.0
 
 # Deployment
